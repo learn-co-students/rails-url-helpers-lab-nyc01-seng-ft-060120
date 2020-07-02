@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: :show
+  # , :activate
   
   def index
     @students = Student.all
@@ -8,9 +9,19 @@ class StudentsController < ApplicationController
   def show
   end
 
+  # The action 'activate' for StudentsController
+  def activate
+    @student = Student.find(params[:id])
+    @student.active = !@student.active 
+    @student.save
+    redirect_to student_path(@student)
+  end
+
   private
 
     def set_student
       @student = Student.find(params[:id])
     end
 end
+
+# rails generate migration add_fieldname_to_tablename fieldname:string.

@@ -4,4 +4,13 @@
 # Examples:
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+#  "students", t.string   "first_name", t.string   "last_name"
+
+
+# 10.times do
+# Student.create([
+#     {first_name: Faker::TvShows::HeyArnold.character, last_name: Faker::TvShows::DrWho.villain }
+#     ])
+# end
